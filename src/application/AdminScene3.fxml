@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="917.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="26.0" layoutY="105.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="45.0" />
+      <Button layoutX="113.0" layoutY="416.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="186.0" text="UPLOAD" />
+      <ImageView fitHeight="248.0" fitWidth="247.0" layoutX="82.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../9776918.png" />
+         </image></ImageView>
+      <TextField layoutX="66.0" layoutY="536.0" prefHeight="48.0" prefWidth="284.0" />
+      <TextField layoutX="66.0" layoutY="620.0" prefHeight="48.0" prefWidth="284.0" text=" " />
+      <TextField layoutX="66.0" layoutY="705.0" prefHeight="48.0" prefWidth="284.0" />
+      <Label layoutX="71.0" layoutY="512.0" prefHeight="26.0" prefWidth="78.0" text="ชื่อสินค้า">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="593.0" prefHeight="26.0" prefWidth="78.0" text="ราคา">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="681.0" prefHeight="26.0" prefWidth="78.0" text="จำนวน">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="133.0" layoutY="794.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="148.0" text="ADD" />
+   </children>
+</AnchorPane>
