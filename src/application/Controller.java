@@ -65,8 +65,10 @@ public class Controller {
 	private TextField AdminScene2;
 	@FXML
 	private TextField AdminScene3;
-//	@FXML
-//	private Button AdminSceneBottion;
+	@FXML
+	private Button AdminSceneBottion;
+	@FXML
+	private Label AdminText;
 	 	
 	
 	
@@ -161,12 +163,34 @@ public class Controller {
     
     @FXML
     public void refreshButton() throws FileNotFoundException {
-            Activity latestActivity = activity.get(activity.size() - 1);
+            Activity latestActivity = activity.get(0);
             Image image = new Image(new FileInputStream(latestActivity.getUrlPic()));
             picAdmin.setImage(image);
             AdminScene1.setText(latestActivity.getInfoActivity());
             AdminScene2.setText(latestActivity.getInfoOther());
             AdminScene3.setText(latestActivity.getInfoPlace());
+    }
+    
+    int i = 1;
+    @FXML
+    public void sendAdminScene() throws FileNotFoundException {
+    	try {
+	    	Activity e = activity.get(i);
+	    	Image image = new Image(new FileInputStream(e.getUrlPic()));
+	    	picAdmin.setImage(image);
+	    	AdminScene1.setText(e.getInfoActivity());
+	        AdminScene2.setText(e.getInfoOther());
+	        AdminScene3.setText(e.getInfoPlace());
+	        i++;
+    	}catch(Exception e) {
+            Image image = new Image(getClass().getResourceAsStream("AnswerPic.png"));
+            picAdmin.setImage(image);
+            AdminScene1.clear();
+            AdminScene2.clear();
+            AdminScene3.clear();
+            AdminText.setText("คุณได้ตรวจสอบทั้งหมดแล้ว");
+    	}
+    	
     }
     
 }
