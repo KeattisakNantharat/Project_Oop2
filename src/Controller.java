@@ -1,20 +1,31 @@
 package application;
-
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.LinkedList;
 
 
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
@@ -25,7 +36,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
-public class Controller {
+public class Controller  {
 	//หน้าล็อกอิน
 	@FXML
 	private Stage stage;
@@ -54,9 +65,18 @@ public class Controller {
 	private TextField UserScene3;
 	@FXML
 	private Label ErrorText;
+//	@FXML
+//	private ComboBox ComboBoxUserScene1;
+	@FXML
+	private Pane paneAdminScene1;
+	
+	//หน้ายูเซอร์2
 	
 	
-	//หน้าแอดมิน
+	
+	
+	
+	//หน้าแอดมิน1
 	@FXML
 	private ImageView picAdmin;
 	@FXML
@@ -72,41 +92,31 @@ public class Controller {
 	 	
 	
 	
-	//ปุ้มกลับไปยังหน้าล๊อกอิน
-	@FXML
-	public void nextLogin(ActionEvent e) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("loginScene.fxml"));
-		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
+//	@FXML
+//	public void Select(ActionEvent e) throws IOException {
+//		String s = ComboBoxUserScene1.getSelectionModel().getSelectedItem().toString();
+//		if (s == "LOGIN") {
+//			Parent root = FXMLLoader.load(getClass().getResource("loginScene.fxml"));
+//			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+//			scene = new Scene(root);
+//			stage.setScene(scene);
+//			stage.show();
+//		}else if (s == "LOGOUT") {
+//			
+//		}
+//	}
 	
 	
-	//ปุ่มล๊อคอินไปยังหน้าUserหรือAdmin
-	@FXML
-	public void next(ActionEvent e) throws IOException {
-		try{
-			String username = UsernameField.getText();
-//			String password = PasswordField.getText();
-
-		if ( username.equals("User")){
-			Parent root = FXMLLoader.load(getClass().getResource("UserScene1.fxml"));
-			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.show();
-		}else if (username.equals("Admin")){
-			Parent root = FXMLLoader.load(getClass().getResource("AdminScene1.fxml"));
-			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.show();
-		}
-	}catch(Exception E) {
-		System.out.println(E);
-	}	
-	}
+	
+//	
+//	@Override
+//	public void initialize(URL url,ResourceBundle rb) {
+//		ObservableList<String> list = FXCollections.observableArrayList("LOGIN","LOGOUT");
+//		ComboBoxUserScene1.setItems(list);
+//		
+//	}
+	
+	
 	
 	
 	
@@ -121,7 +131,7 @@ public class Controller {
 		 if (selectedFile != null) {
              try {
                  // คัดลอกไฟล์รูปภาพไปยังโฟลเดอร์ที่ต้องการ
-                 File destinationFile = new File("C:\\Users\\tharat\\eclipse-workspace" + selectedFile.getName());
+                 File destinationFile = new File("Picture" + selectedFile.getName());
                  copyFile(selectedFile, destinationFile);
                  // โหลดและแสดงรูปที่อัพโหลด
                  Image image = new Image(new FileInputStream(destinationFile));
@@ -189,9 +199,92 @@ public class Controller {
             AdminScene2.clear();
             AdminScene3.clear();
             AdminText.setText("คุณได้ตรวจสอบทั้งหมดแล้ว");
+            BackgroundFill backgroundFill = new BackgroundFill(Color.web("#3E3E3E"), null, null);
+            Background background = new Background(backgroundFill);
+            paneAdminScene1.setBackground(background);
     	}
-    	
     }
     
+    
+    
+	//ปุ่มล๊อคอินไปยังหน้าUserหรือAdmin
+	@FXML
+	public void next(ActionEvent e) throws IOException {
+		try{
+			String username = UsernameField.getText();
+//			String password = PasswordField.getText();
+
+		if ( username.equals("User")){
+			Parent root = FXMLLoader.load(getClass().getResource("UserScene1.fxml"));
+			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		}else if (username.equals("Admin")){
+			Parent root = FXMLLoader.load(getClass().getResource("AdminScene1.fxml"));
+			stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		}
+	}catch(Exception E) {
+		System.out.println(E);
+	}	
+	}
+	//ปุ้มกลับไปยังหน้าล๊อกอิน
+	@FXML
+	public void nextLogin(ActionEvent e) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/application/loginScene.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+    //เปิดหน้ายูเซอร์1
+    @FXML
+    public void nextUserScene1(ActionEvent e) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("UserScene1.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+    }
+    //เปิดหน้ายูเชอร์2
+    @FXML
+    public void nextUserScene2(ActionEvent e) throws IOException {
+    	Parent root = FXMLLoader.load(getClass().getResource("UserScene2.fxml"));
+    	stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+    	scene = new Scene(root);
+    	stage.setScene(scene);
+    	stage.show();
+    }
+    
+    //เปิดหน้าแอดมิน1
+    @FXML
+    public void nextAdminScene1(ActionEvent e) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("AdminScene1.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+    }
+    //เปิดหน้าแอดมิน2
+    @FXML
+    public void nextAdminScene2(ActionEvent e) throws IOException {
+    	Parent root = FXMLLoader.load(getClass().getResource("AdminScene2.fxml"));
+    	stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+    	scene = new Scene(root);
+    	stage.setScene(scene);
+    	stage.show();
+    }
+  //เปิดหน้าแอดมิน2
+    @FXML
+    public void nextAdminScene3(ActionEvent e) throws IOException {
+    	Parent root = FXMLLoader.load(getClass().getResource("AdminScene3.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+    }
 }
 

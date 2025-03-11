@@ -1,5 +1,4 @@
 package application;
-
 import java.io.File;
 
 import javafx.scene.control.TextField;

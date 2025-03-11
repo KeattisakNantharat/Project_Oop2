@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="917.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="917.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="46.0" />
+      <Button layoutX="19.0" layoutY="103.0" mnemonicParsing="false" onAction="#nextUserScene1" prefHeight="44.0" prefWidth="46.0" />
       <Label layoutX="83.0" layoutY="355.0" prefHeight="26.0" prefWidth="46.0" text="Point">
          <font>
             <Font size="16.0" />

@@ -8,10 +8,9 @@
 <?import javafx.scene.shape.Box?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="917.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="917.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <Button layoutX="32.0" layoutY="93.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="45.0" />
+      <Button layoutX="32.0" layoutY="93.0" mnemonicParsing="false" onAction="#nextAdminScene1" prefHeight="46.0" prefWidth="45.0" />
       <Label layoutX="105.0" layoutY="270.0" prefHeight="26.0" prefWidth="22.0" text="ชื่อ">
          <font>
             <Font size="16.0" />
@@ -52,5 +51,10 @@
       <Button layoutX="270.0" layoutY="563.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="-" />
       <Button layoutX="322.0" layoutY="563.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" text="+" />
       <Box depth="100" height="62.0" layoutX="206.0" layoutY="31.0" width="412.0" />
+      <Button layoutX="125.0" layoutY="660.0" mnemonicParsing="false" onAction="#nextAdminScene3" prefHeight="56.0" prefWidth="138.0" text="+">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
